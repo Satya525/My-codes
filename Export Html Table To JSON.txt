@@ -1,0 +1,93 @@
+Export Html Table To JSON/CSV/TXT/PDF - TableHTMLExport
+==================================================================
+
+1. Download and place the JavaScript tableHTMLExport.js after jQuery.
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	        crossorigin="anonymous"></script>
+	<script src="src/tableHTMLExport.js"></script>
+
+2. Load the jspdf and jspdf.plugin.autotable libraries if you want to export the table to PDF
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
+
+3. Export your HTML table to JSON, CSV, TXT, or PDF files.
+
+<table class="table" id="example">
+	  <thead class="thead-dark">
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">First</th>
+	      <th scope="col">Last</th>
+	      <th scope="col">Handle</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <th scope="row">1</th>
+	      <td>Mark</td>
+	      <td>Otto</td>
+	      <td>@mdo</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">2</th>
+	      <td>Jacob</td>
+	      <td>Thornton</td>
+	      <td>@fat</td>
+	    </tr>
+	    <tr>
+	      <th scope="row">3</th>
+	      <td>Larry</td>
+	      <td>the Bird</td>
+	      <td>@<a href="https://www.jqueryscript.net/tags.php?/twitter/">twitter</a></td>
+	    </tr>
+	  </tbody>
+	</table>
+	$("#example").tableHTMLExport({
+	  // csv, txt, json, pdf
+	  type:'json',
+	  // file name
+	  filename:'sample.json'
+	});
+
+4.Set the columns & rows to ignore.
+
+$("#example").tableHTMLExport({ 
+	  // csv, txt, json, pdf
+	  type:'json', 
+	  // file name
+	  filename:'sample.json',	 
+	  ignoreColumns: '.ignore',
+	  ignoreRows: '.ignore'
+	});
+
+5.More customization options to customize the table export plugin.
+
+$("#example").tableHTMLExport({
+
+  // csv, txt, json, pdf
+  type:'csv',
+
+  // default file name
+  filename: 'tableHTMLExport.csv'
+
+  // for csv
+  separator: ',',
+  newline: '\r\n',
+  trimContent: true,
+  quoteFields: true,
+
+  // CSS selector(s)
+  ignoreColumns: '',
+  ignoreRows: '',
+                
+  // your html table has html content?
+  htmlContent: false,
+  
+  // debug
+  consoleLog: false,        
+
+});
+

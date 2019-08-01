@@ -1,0 +1,63 @@
+Exporting Table To CSV/TXT/TSV - jquery.tabletocsv.js
+
+1. Load the main JavaScript jquery.tabletocsv.js after jQuery but before we close the body tag.
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+<script src="jquery.tabletocsv.js"></script>
+
+2. Your HTML table must have thead and tbody elements as follows:
+
+<table class="table" id="example">
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Savings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>January</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>$80</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Sum</td>
+      <td>$180</td>
+    </tr>
+  </tfoot>
+</table>
+
+3. Export the HTML table to a CSV file.
+
+$('#example').tableToCsv();
+
+4. Customize the file name.
+
+$('#example').tableToCsv({
+  fileName: t.attr('id')
+);
+
+5.Customize the file extension.
+
+$('#example').tableToCsv({
+  extension: 'csv' // or 'txt', 'tsv'
+);
+
+6. Determine if output the table headers.
+
+$('#example').tableToCsv({
+  outputheaders: true
+);
+
+7. Customize the separator.
+
+$('#example').tableToCsv({
+  seperator: ',',
+);

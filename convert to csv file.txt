@@ -1,0 +1,30 @@
+Load jQuery library and the jQuery table2csv plugin when needed.
+
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="src/table2csv.js"></script>
+
+Export your table into a downloadable CSV file.
+
+$("table").table2csv();
+
+Parse and output your table data in CSV format.
+
+$("table").table2csv('output', {
+	  appendTo: '#out'
+	});
+
+Specify the file name.
+
+$("table").table2csv({
+	  filename: 'table.csv'
+	});
+
+General settings with default values.
+
+$("table").table2csv({
+	  separator: ',',
+	  newline: '\n',
+	  quoteFields: true,
+	  excludeColumns: '',
+	  excludeRows: ''
+	});
