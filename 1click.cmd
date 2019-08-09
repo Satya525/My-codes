@@ -12,5 +12,3 @@ explorer "http://MSGuides.com"&goto halt
 echo.&echo ============================================================================&echo Sorry! Your version is not supported.&echo Please try installing the latest version here: bit.ly/downloadmsp
 :halt
 pause >nul
-
-//copya all this file without it
