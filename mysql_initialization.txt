@@ -1,0 +1,11 @@
+Initialize the database. Create a root user without password.
+mysqld --initialize --console
+
+start the MySQL Database Server
+mysqld --console
+
+Start a client as superuser "root"
+mysql -u root -p
+
+change password
+alter user 'root'@'localhost' identified by 'satya@1994';
