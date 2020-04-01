@@ -1,36 +1,75 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Jqury Form</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
-	
-<div class="container"><br><br>
-	<h1 class="text-center text-warning">Jquery Form Validation</h1>
-	<div class="col-lg-8 m-auto d-block">
-		<form>
-			<div class="form-group">
-				<label for="user"> Username :</label>
-				<input type="number" name="username" id="user" class="form-control" autocomplete="off">
-				<h5 id="usercheck">  </h5>
-			</div>
-			<input type="button" name="" id="btn" value="Submit"class="btn btn-primary" onclick="myfunction()">
-			<h1 id="text1"></h1>
-		</form>
-	</div>
-</div>
+    <!DOCTYPE html>
+    <html lang="en">
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="./jquery1.js" type="text/javascript" charset="utf-8" async defer></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rating Stars</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+            integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+            integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" /> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
 
-<!-- Popper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <body>
+        <div class="container mt-5">
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Full Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+                </div>
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <label for="exampleFormControlSelect2">Phone No</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput2"
+                        placeholder="+00 0000 000 000">
+                    <!-- <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select> -->
+                </div>
+                <div class="form-group" style="margin-bottom: 2%;">
+                    <label for="exampleFormControlSelect23">User Rating:</label>
+                    <div class="rating" id="exampleFormControlSelect23">
+                        <input type="radio" name="star" id="star1"><label for="star1"></label>
+                        <input type="radio" name="star" id="star2"><label for="star2"></label>
+                        <input type="radio" name="star" id="star3"><label for="star3"></label>
+                        <input type="radio" name="star" id="star4"><label for="star4"></label>
+                        <input type="radio" name="star" id="star5"><label for="star5"></label>
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="exampleFormControlSelect2">Example multiple select</label>
+                    <select multiple class="form-control" id="exampleFormControlSelect2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div> -->
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Desc</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder=" Write description here"></textarea>
+                </div>
+                <button type="submit" id="submt" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
 
-<!-- Latest compiled and minified Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	
-</body>
-</html>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+    </body>
+
+    </html>
