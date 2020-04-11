@@ -12,16 +12,27 @@ html
         span.navbar-toggler-icon
       #navbarNav.collapse.navbar-collapse
         ul.navbar-nav
-          li.nav-item.active
+        if user
+          li.nav-item.sty.active
             a.nav-link(href='/')
               | Home 
               span.sr-only (current)
-          li.nav-item
+        if user
+          li.nav-item.sty
             a.nav-link(href='/articles/add') Add Article
-          li.nav-item
-            a.nav-link(href='/index.pug') index
-
+          li.nav-item.sty
+            a.nav-link(href='/users/logout') Logout
+        else
+          li.nav-item.sty
+            a.nav-link(href='/users/register') Register
+          li.nav-item.sty
+            a.nav-link(href='/users/login') Login
   .container
+    br
+    != messages('message', locals)
+    if errors
+      each error, i in errors
+        div(class=" alert alert-danger") #{error.msg}
     block content
     br
     hr
