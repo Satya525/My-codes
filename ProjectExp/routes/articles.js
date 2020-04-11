@@ -79,7 +79,6 @@ router.post('/edit/:id', ensureAuthenticated, function(req, res){
   });
 });
 
-// Delete Article
 router.delete('/:id', ensureAuthenticated, function(req, res){
     if(!req.user._id){
             res.status(500).send();
@@ -102,7 +101,7 @@ router.delete('/:id', ensureAuthenticated, function(req, res){
   });
 });
 
-// Get Single Article
+
 router.get('/:id', ensureAuthenticated, function(req, res){
   Article.findById(req.params.id, function(err, article){
     User.findById(article.author, function(err, user){
