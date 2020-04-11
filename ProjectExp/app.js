@@ -98,32 +98,7 @@ function ensureAuthenticated(req, res, next){
       res.redirect('/users/login');
     }
   }
-// app.get("/", (req, res) => {
-//     let articles = [
-//         {
-//             id:1,
-//             title:'Article One',
-//             author:'Satya',
-//             body:'This is article 1'
-//         },
-//         {
-//             id:2,
-//             title:'Article Two',
-//             author:'Satya',
-//             body:'This is article 1'
-//         },
-//         {
-//             id:3,
-//             title:'Article Three',
-//             author:'Satya',
-//             body:'This is article 1'
-//         }
-//     ];
-//     res.render("index",{
-//         title:'Hello',
-//         articles: articles
-//     });
-// })
+  
 let articles = require('./routes/articles.js');
 let users = require('./routes/users');
 app.use('/articles', articles);
