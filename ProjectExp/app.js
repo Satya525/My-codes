@@ -9,6 +9,7 @@ const expressMessage = require('express-messages')
 const passport = require('passport');
 const config = require('./config/database');
 // mongoose.connect('mongodb://localhost:27017/nodek', { useNewUrlParser: true, useUnifiedTopology: true,});
+const PORT = process.env.PORT || 8080;
 
 mongoose.connect(config.database);
 let db = mongoose.connection;
@@ -98,12 +99,12 @@ function ensureAuthenticated(req, res, next){
       res.redirect('/users/login');
     }
   }
-  
+
 let articles = require('./routes/articles.js');
 let users = require('./routes/users');
 app.use('/articles', articles);
 app.use('/users', users);
 
-app.listen(3000, () => {
-    console.log("Server Started on port 3000...");
+app.listen(PORT, () => {
+    console.log(`Server starting at ${PORT}`);
 });
